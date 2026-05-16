@@ -1,0 +1,47 @@
+{
+  "info": {
+    "name": "Evaluation Service (setup only)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register (once)",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"\",\n  \"name\": \"\",\n  \"mobileNo\": \"\",\n  \"githubUsername\": \"\",\n  \"rollNo\": \"\",\n  \"accessCode\": \"\"\n}"
+        },
+        "url": "http://4.224.186.213/evaluation-service/register"
+      }
+    },
+    {
+      "name": "Auth",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"\",\n  \"name\": \"\",\n  \"rollNo\": \"\",\n  \"accessCode\": \"\",\n  \"clientID\": \"\",\n  \"clientSecret\": \"\"\n}"
+        },
+        "url": "http://4.224.186.213/evaluation-service/auth"
+      }
+    },
+    {
+      "name": "Logs",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "Authorization", "value": "Bearer {{access_token}}"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"stack\": \"backend\",\n  \"level\": \"info\",\n  \"package\": \"utils\",\n  \"message\": \"manual log test\"\n}"
+        },
+        "url": "http://4.224.186.213/evaluation-service/logs"
+      }
+    }
+  ]
+}
