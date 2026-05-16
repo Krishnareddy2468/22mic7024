@@ -49,23 +49,4 @@ cd notification_app_be && uvicorn main:app --reload --port 8000
 cd vehicle_maintence_scheduler && uvicorn main:app --reload --port 8001
 ```
 
-## Project Structure
 
-```
-├── logging_middleware/          # Shared logging package
-├── notification_app_be/         # Notification Priority Inbox service
-│   ├── routes/priority.py
-│   ├── services/priority_inbox.py
-│   ├── services/eval_client.py
-│   └── screenshots/
-├── vehicle_maintence_scheduler/ # Vehicle Maintenance Scheduler service
-│   ├── routes/schedule.py
-│   ├── services/schedule_service.py
-│   ├── services/knapsack.py
-│   └── screenshots/
-├── postman/                    # Postman collection for evaluation service
-├── scripts/                    # Registration and smoke-test scripts
-├── .env.example
-├── LOCAL_SETUP.md
-└── notification_system_design.md
-```
